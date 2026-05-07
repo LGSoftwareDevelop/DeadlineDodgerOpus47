@@ -34,7 +34,11 @@ npm run build
 npm run preview   # local preview of the built app
 ```
 
-The built site lives in `dist/`. It's a static SPA — `public/_redirects` ensures client-side routes work on hosts that respect Netlify-style redirects (Cloudflare Pages does).
+The built site lives in `dist/`. It's a static SPA. On Cloudflare's
+Workers + static assets pipeline, the auto-generated `wrangler.jsonc`
+sets `assets.not_found_handling: "single-page-application"`, which
+serves `/index.html` for any unknown route so client-side routing works
+on refresh.
 
 ## Deploy to Cloudflare Pages
 
