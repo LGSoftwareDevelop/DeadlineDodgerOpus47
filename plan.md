@@ -46,9 +46,19 @@ type Assignment = {
   classId?: string;       // optional link to a Class
   dueDate: string;        // ISO date
   notes?: string;
+  links?: { url: string; label?: string }[];   // hyperlinks
+  attachments?: AttachmentRef[];               // images/files (IndexedDB blobs)
   completed: boolean;
   completedAt?: string;
   createdAt: string;
+};
+
+type AttachmentRef = {
+  id: string;             // blob id in IDB
+  name: string;
+  mime: string;
+  size: number;
+  kind: "image" | "file";
 };
 
 type Class = {
@@ -91,10 +101,12 @@ type DailyPrompt = {
 ```
 
 ### Cycle-day rotation logic
-- The student tells us **today is Green Day** (one-time setup, editable).
-- The app stores that as an anchor, then advances one cycle-day per school day, skipping weekends + holidays.
-- Because cycle days don't reset on the calendar week, this anchor-walk approach handles the "switches week to week" requirement naturally.
-- Example: Mon=Green, Tue=Gold, Wed=Green, Thu=Gold, Fri=Green → next Mon=Gold (it flipped).
+- Cycle days are **fully user-defined** — any number, any names, any colors. Default seeds (Green Day, Gold Day) are editable/deletable, and the user can add Blue Day, Red Day, A Day, B Day, etc.
+- The student tells us **what cycle day today is** (one-time setup, editable any time).
+- The app stores that as an anchor, then advances one cycle-day per school day, skipping weekends + holidays + manual "no-school" overrides.
+- Because cycle days don't reset on the calendar week, this anchor-walk approach handles the "rhythm changes week to week" requirement naturally — Monday is **not** locked to any color.
+- The user can also **manually override any specific date** ("today was supposed to be Green but a snow-day pushed it to Gold") so reality always wins over math.
+- Example: Mon=Green, Tue=Gold, Wed=Green, Thu=Gold, Fri=Green → next Mon=Gold (flipped). Add a holiday on Wed → Wed skipped, Thu becomes Wed's slot, etc.
 
 ---
 
@@ -109,7 +121,10 @@ type DailyPrompt = {
 2. **`/assignments` All Homework**
    - Filter: All / Active / Completed / Overdue.
    - Sort: Due date asc (default), by class, by recently added.
-   - Each row: title, class (color chip), due date (relative: "in 2 days", "tomorrow", "OVERDUE 3d"), checkbox.
+   - Each row: title, class (color chip), due date (relative: "in 2 days", "tomorrow", "OVERDUE 3d"), checkbox, paperclip icon if attachments/links exist.
+   - Add/edit form supports:
+     - **Hyperlinks**: list of URLs with optional labels (e.g., "Google Doc", "Khan Academy lesson").
+     - **Attachments**: image picker, generic file picker, **and direct camera capture** (`<input type="file" accept="image/*" capture="environment">` for snapping a photo of the worksheet/whiteboard). Stored as Blobs in IndexedDB. Image attachments show as thumbnails.
 
 3. **`/classes` Classes**
    - List of classes with color chip + meeting days.
@@ -124,9 +139,9 @@ type DailyPrompt = {
    - Free-form todos. Add, complete, delete, reorder.
 
 6. **`/settings`**
-   - Theme (light/dark/system).
-   - Snark level slider (Mild / Medium / Savage) → tunes quote pool.
-   - Export / Import JSON backup.
+   - Theme: **System** (default), Light, Dark — user-overridable.
+   - Snark level: Mild / **Medium (default)** / Savage → tunes quote pool.
+   - Backup: **Export to JSON file** (download) **and "Copy JSON to clipboard"** (one-tap paste into Google Drive / Keep / Notes). Import from file or clipboard paste.
    - Reset everything.
 
 Bottom nav (mobile-first): **Today · Homework · Classes · Todos · More**
@@ -279,12 +294,16 @@ A small streak counter ("🔥 4 done today") on the Today screen for extra dopam
 
 ---
 
-## 10. Open Questions for You Before I Start
+## 10. Decisions (locked in)
 
-1. **Cycle days** — default to just **Green / Gold**, or seed more (Blue/Red) and let you delete?
-2. **Snark level default** — Mild, Medium, or Savage out of the box?
-3. **Dark mode** — default to system, or force dark (high schooler aesthetic)?
-4. **Mascot?** — want me to design a small character (e.g., a tired but supportive raccoon) for empty states and the celebration toast, or keep it text-only?
-5. **Backup** — JSON export only, or also a "copy to clipboard" shortcut?
+| Question | Decision |
+|---|---|
+| Cycle days | **Fully user-customizable.** Seed Green + Gold by default; user can add/rename/recolor/delete any number. Rhythm is anchor-walked, not pinned to weekdays — Monday can be any day. Manual per-date override supported. |
+| Snark level default | **Medium**, user adjustable (Mild / Medium / Savage). |
+| Dark mode | **Follow system by default**, user can override to Light or Dark. |
+| Mascot | **Yes — Dodger the tired-but-supportive raccoon.** Appears in empty states, the celebration toast, and the install banner. SVG-based for crispness at any size. |
+| Backup | **Both** — JSON file export/import **and** "Copy to clipboard" / "Paste from clipboard" for Google Drive friendliness. |
+| Attachments | **Yes** — image picker, file picker, and direct **camera capture** on assignments. Stored as Blobs in IndexedDB. |
+| Hyperlinks | **Yes** — assignments can have any number of titled URLs. |
 
-Once you green-light the plan (and answer any of the above you care about), I'll start at Phase 1 and commit phase-by-phase.
+Building now, phase-by-phase, committing along the way.

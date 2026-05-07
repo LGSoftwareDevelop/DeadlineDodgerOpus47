@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <!-- raccoon mascot -->
+  <ellipse cx="32" cy="38" rx="20" ry="16" fill="#94a3b8"/>
+  <ellipse cx="32" cy="40" rx="14" ry="11" fill="#cbd5e1"/>
+  <!-- ears -->
+  <circle cx="16" cy="22" r="6" fill="#94a3b8"/>
+  <circle cx="48" cy="22" r="6" fill="#94a3b8"/>
+  <circle cx="16" cy="22" r="3" fill="#475569"/>
+  <circle cx="48" cy="22" r="3" fill="#475569"/>
+  <!-- mask -->
+  <ellipse cx="24" cy="36" rx="7" ry="6" fill="#1e293b"/>
+  <ellipse cx="40" cy="36" rx="7" ry="6" fill="#1e293b"/>
+  <!-- eyes -->
+  <circle cx="24" cy="36" r="2.2" fill="#fde68a"/>
+  <circle cx="40" cy="36" r="2.2" fill="#fde68a"/>
+  <!-- nose -->
+  <ellipse cx="32" cy="44" rx="2.4" ry="1.8" fill="#0f172a"/>
+  <!-- accent sparkle -->
+  <circle cx="52" cy="14" r="2" fill="#a78bfa"/>
+</svg>

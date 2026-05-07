@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide number input spinners */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-ink-800 rounded-2xl shadow-sm border border-ink-200 dark:border-ink-700 p-4;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-dark;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-100 dark:bg-ink-700 text-ink-800 dark:text-ink-100 hover:bg-ink-200 dark:hover:bg-ink-600;
+  }
+  .btn-danger {
+    @apply btn bg-rose-500 text-white hover:bg-rose-600;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wide text-ink-500 dark:text-ink-300 mb-1;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+/* Safe area padding for mobile bottom nav */
+.pb-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 5rem);
+}
+.bottom-safe {
+  bottom: env(safe-area-inset-bottom);
+}
