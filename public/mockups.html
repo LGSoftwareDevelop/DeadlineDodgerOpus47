@@ -3,40 +3,41 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Deadline Dodger — Mascot Mockups</title>
+<title>Deadline Dodger — Panda Ski Mask Mockups</title>
 <style>
   :root {
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --ink: #0f172a;
-    --muted: #64748b;
-    --border: #e2e8f0;
+    --bg: #0a0a0a;
+    --card: #111113;
+    --ink: #f5f5f5;
+    --muted: #71717a;
+    --border: #27272a;
     --accent: #a78bfa;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
     color: var(--ink);
     padding: 32px 16px 64px;
   }
   h1 {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
     font-size: 28px;
     text-align: center;
+    letter-spacing: -0.02em;
   }
   .sub {
     text-align: center;
     color: var(--muted);
-    margin-bottom: 32px;
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 32px;
+    max-width: 580px;
+    font-size: 14px;
+    line-height: 1.55;
   }
   .grid {
     display: grid;
-    gap: 20px;
+    gap: 18px;
     max-width: 1100px;
     margin: 0 auto;
     grid-template-columns: 1fr;
@@ -49,7 +50,6 @@
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 18px;
-    box-shadow: 0 2px 12px rgba(15,23,42,0.04);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -58,393 +58,510 @@
     font-size: 22px;
     font-weight: 700;
     margin: 0;
+    letter-spacing: -0.01em;
   }
   .codename {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     color: var(--accent);
     font-weight: 700;
   }
-  .desc { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0; }
-  .stage {
-    display: flex;
-    align-items: stretch;
-    gap: 8px;
-    background: linear-gradient(135deg, #ddd6fe 0%, #f5f3ff 100%);
-    border-radius: 14px;
-    padding: 16px;
-    justify-content: center;
-  }
-  .stage.dark {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  }
-  .stage svg { display: block; }
+  .desc { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0; }
   .row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  .thumbs {
+  .stage {
+    background: #18181b;
+    border-radius: 14px;
+    padding: 18px;
     display: flex;
-    gap: 8px;
     align-items: center;
     justify-content: center;
-    padding-top: 6px;
-    border-top: 1px dashed var(--border);
+    border: 1px solid var(--border);
+  }
+  .stage.light {
+    background: #f5f5f5;
+  }
+  .stage svg { display: block; }
+  .thumbs {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+  .thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
   }
   .thumb-label {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
-    text-align: center;
-    margin-top: 4px;
   }
   .quote {
     font-size: 13px;
-    color: var(--ink);
-    font-style: italic;
-    background: #f1f5f9;
-    border-radius: 10px;
+    color: #d4d4d8;
+    background: #0a0a0a;
+    border-left: 2px solid var(--accent);
     padding: 8px 10px;
-  }
-  .pick {
-    font-size: 11px;
-    background: var(--accent);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: 600;
+    line-height: 1.5;
   }
 </style>
 </head>
 <body>
-  <h1>Deadline Dodger — Mascot Mockups</h1>
-  <p class="sub">Three options. Each shown big on a light + dark background, plus a tiny favicon-scale thumbnail to check readability. Pick one (or mash them up).</p>
+  <h1>Panda · Ski Mask · Take 2</h1>
+  <p class="sub">Face-only. Visible fur. No props, no glasses, no sparkles. Three different mask cuts. Each shown on dark + light, with favicon thumbnails.</p>
 
   <div class="grid">
 
-    <!-- ============ 1. SLOTH ============ -->
+    <!-- ============ A. FULL BALACLAVA ============ -->
     <div class="card">
       <div>
-        <div class="codename">Option 1 · Crash</div>
-        <h2 class="name">Sloth in a hoodie</h2>
+        <div class="codename">Variant A</div>
+        <h2 class="name">Full balaclava</h2>
       </div>
-      <p class="desc">Hoodie up, AirPods in, perpetually one nap behind. "I'm doing it… eventually." Lo-fi, dark academia coded.</p>
+      <p class="desc">Black ski mask covers the whole head. Two eye slits, one narrow mouth slit. Fur peeks at the sides. Most "wanted poster."</p>
       <div class="row">
         <div class="stage">
-          <!-- Sloth large -->
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <!-- shadow -->
-            <ellipse cx="60" cy="108" rx="34" ry="4" fill="rgba(0,0,0,0.15)"/>
-            <!-- hoodie back -->
-            <path d="M22 60 Q22 30 60 28 Q98 30 98 60 L98 100 Q98 108 90 108 L30 108 Q22 108 22 100 Z" fill="#7c3aed"/>
-            <!-- hoodie inner shadow -->
-            <path d="M30 64 Q30 38 60 36 Q90 38 90 64" fill="#5b21b6" opacity="0.6"/>
-            <!-- face -->
-            <ellipse cx="60" cy="68" rx="28" ry="26" fill="#a8763e"/>
-            <!-- lighter face cream -->
-            <ellipse cx="60" cy="72" rx="22" ry="20" fill="#d4a373"/>
-            <!-- eye masks (sloth dark stripes) -->
-            <ellipse cx="48" cy="64" rx="10" ry="8" fill="#5e3a1a" transform="rotate(-15 48 64)"/>
-            <ellipse cx="72" cy="64" rx="10" ry="8" fill="#5e3a1a" transform="rotate(15 72 64)"/>
-            <!-- hooded eyes (half-closed) -->
-            <path d="M44 64 Q48 66 52 64" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path d="M68 64 Q72 66 76 64" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <!-- tiny eye dots peeking -->
-            <circle cx="48" cy="65" r="1.4" fill="#0f172a"/>
-            <circle cx="72" cy="65" r="1.4" fill="#0f172a"/>
-            <!-- nose -->
-            <ellipse cx="60" cy="76" rx="3" ry="2" fill="#0f172a"/>
-            <!-- mouth (slight smirk) -->
-            <path d="M55 84 Q60 85 65 83" stroke="#0f172a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <!-- AirPod (left) -->
-            <rect x="36" y="74" width="3" height="9" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <circle cx="37.5" cy="73" r="2.4" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <!-- AirPod (right) -->
-            <rect x="81" y="74" width="3" height="9" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <circle cx="82.5" cy="73" r="2.4" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <!-- hood drawstrings -->
-            <line x1="44" y1="92" x2="42" y2="106" stroke="#3b0764" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="76" y1="92" x2="78" y2="106" stroke="#3b0764" stroke-width="1.6" stroke-linecap="round"/>
-            <circle cx="42" cy="107" r="1.6" fill="#3b0764"/>
-            <circle cx="78" cy="107" r="1.6" fill="#3b0764"/>
-            <!-- yawn wisp -->
-            <text x="92" y="38" font-size="14" opacity="0.6">💤</text>
+          <!-- ============ FULL BALACLAVA SVG ============ -->
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="aFur" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#fafafa"/>
+                <stop offset="70%" stop-color="#d4d4d8"/>
+                <stop offset="100%" stop-color="#71717a"/>
+              </radialGradient>
+              <pattern id="aFurStrokes" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                <path d="M2 2 L4 0 M6 4 L9 1 M10 8 L13 5 M3 9 L6 7 M8 12 L11 10" stroke="#a1a1aa" stroke-width="0.6" stroke-linecap="round" opacity="0.55"/>
+              </pattern>
+              <radialGradient id="aMask" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#1c1c1e"/>
+                <stop offset="100%" stop-color="#000"/>
+              </radialGradient>
+            </defs>
+
+            <!-- fur base (head shape) -->
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="url(#aFur)"/>
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="url(#aFurStrokes)"/>
+            <!-- subtle outer fur tufts -->
+            <g stroke="#a1a1aa" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7">
+              <path d="M22 76 L17 72 M20 90 L14 90 M22 104 L17 110 M30 130 L26 137 M50 142 L48 150 M80 144 L80 152 M110 142 L112 150 M130 130 L134 137 M138 104 L143 110 M140 90 L146 90 M138 76 L143 72 M30 52 L26 45 M50 38 L48 30 M80 36 L80 28 M110 38 L112 30 M130 52 L134 45"/>
+            </g>
+            <!-- ears (rounded panda ears) - black, with fur stroke -->
+            <ellipse cx="38" cy="32" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="122" cy="32" rx="14" ry="13" fill="#000"/>
+            <g stroke="#3f3f46" stroke-width="0.7" stroke-linecap="round" opacity="0.8">
+              <path d="M28 28 L25 25 M30 36 L26 38 M44 26 L46 22 M48 36 L52 36"/>
+              <path d="M112 28 L115 25 M114 36 L118 38 M128 26 L130 22 M132 36 L136 36"/>
+            </g>
+
+            <!-- BALACLAVA: covers whole head, leaving fur ring at the bottom + ears -->
+            <path d="M80 30
+                     C 50 30, 28 52, 28 86
+                     C 28 110, 42 124, 60 128
+                     L 100 128
+                     C 118 124, 132 110, 132 86
+                     C 132 52, 110 30, 80 30 Z"
+                  fill="url(#aMask)"/>
+            <!-- subtle stitch line down the center -->
+            <path d="M80 32 L80 70 M80 92 L80 122" stroke="#27272a" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.7"/>
+
+            <!-- eye slits (cutouts showing fur underneath - we draw fur color back in) -->
+            <g>
+              <ellipse cx="60" cy="78" rx="11" ry="6" fill="#e4e4e7"/>
+              <ellipse cx="100" cy="78" rx="11" ry="6" fill="#e4e4e7"/>
+              <!-- eyes: intense, narrowed -->
+              <ellipse cx="60" cy="78" rx="5.5" ry="4.2" fill="#facc15"/>
+              <ellipse cx="100" cy="78" rx="5.5" ry="4.2" fill="#facc15"/>
+              <!-- pupils: vertical narrow -->
+              <ellipse cx="60" cy="78" rx="1.6" ry="3.2" fill="#0a0a0a"/>
+              <ellipse cx="100" cy="78" rx="1.6" ry="3.2" fill="#0a0a0a"/>
+              <!-- catchlight -->
+              <circle cx="58.5" cy="76.5" r="0.8" fill="#fff"/>
+              <circle cx="98.5" cy="76.5" r="0.8" fill="#fff"/>
+              <!-- brow furrow above eyes (slight angle = unimpressed) -->
+              <path d="M50 70 L70 73" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              <path d="M110 70 L90 73" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- mouth slit -->
+            <rect x="68" y="106" width="24" height="5" rx="2" fill="#3f3f46"/>
+            <!-- tiny nose poking through -->
+            <ellipse cx="80" cy="98" rx="3.2" ry="2.2" fill="#27272a"/>
           </svg>
         </div>
-        <div class="stage dark">
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="60" cy="108" rx="34" ry="4" fill="rgba(0,0,0,0.4)"/>
-            <path d="M22 60 Q22 30 60 28 Q98 30 98 60 L98 100 Q98 108 90 108 L30 108 Q22 108 22 100 Z" fill="#a78bfa"/>
-            <path d="M30 64 Q30 38 60 36 Q90 38 90 64" fill="#7c3aed" opacity="0.6"/>
-            <ellipse cx="60" cy="68" rx="28" ry="26" fill="#a8763e"/>
-            <ellipse cx="60" cy="72" rx="22" ry="20" fill="#d4a373"/>
-            <ellipse cx="48" cy="64" rx="10" ry="8" fill="#5e3a1a" transform="rotate(-15 48 64)"/>
-            <ellipse cx="72" cy="64" rx="10" ry="8" fill="#5e3a1a" transform="rotate(15 72 64)"/>
-            <path d="M44 64 Q48 66 52 64" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path d="M68 64 Q72 66 76 64" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <circle cx="48" cy="65" r="1.4" fill="#0f172a"/>
-            <circle cx="72" cy="65" r="1.4" fill="#0f172a"/>
-            <ellipse cx="60" cy="76" rx="3" ry="2" fill="#0f172a"/>
-            <path d="M55 84 Q60 85 65 83" stroke="#0f172a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <rect x="36" y="74" width="3" height="9" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <circle cx="37.5" cy="73" r="2.4" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <rect x="81" y="74" width="3" height="9" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <circle cx="82.5" cy="73" r="2.4" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-            <line x1="44" y1="92" x2="42" y2="106" stroke="#5b21b6" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="76" y1="92" x2="78" y2="106" stroke="#5b21b6" stroke-width="1.6" stroke-linecap="round"/>
-            <circle cx="42" cy="107" r="1.6" fill="#5b21b6"/>
-            <circle cx="78" cy="107" r="1.6" fill="#5b21b6"/>
-            <text x="92" y="38" font-size="14" fill="#cbd5e1">💤</text>
+        <div class="stage light">
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="url(#aFur)"/>
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="url(#aFurStrokes)"/>
+            <g stroke="#a1a1aa" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7">
+              <path d="M22 76 L17 72 M20 90 L14 90 M22 104 L17 110 M30 130 L26 137 M50 142 L48 150 M80 144 L80 152 M110 142 L112 150 M130 130 L134 137 M138 104 L143 110 M140 90 L146 90 M138 76 L143 72 M30 52 L26 45 M50 38 L48 30 M80 36 L80 28 M110 38 L112 30 M130 52 L134 45"/>
+            </g>
+            <ellipse cx="38" cy="32" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="122" cy="32" rx="14" ry="13" fill="#000"/>
+            <path d="M80 30 C 50 30, 28 52, 28 86 C 28 110, 42 124, 60 128 L 100 128 C 118 124, 132 110, 132 86 C 132 52, 110 30, 80 30 Z" fill="url(#aMask)"/>
+            <path d="M80 32 L80 70 M80 92 L80 122" stroke="#27272a" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.7"/>
+            <ellipse cx="60" cy="78" rx="11" ry="6" fill="#e4e4e7"/>
+            <ellipse cx="100" cy="78" rx="11" ry="6" fill="#e4e4e7"/>
+            <ellipse cx="60" cy="78" rx="5.5" ry="4.2" fill="#facc15"/>
+            <ellipse cx="100" cy="78" rx="5.5" ry="4.2" fill="#facc15"/>
+            <ellipse cx="60" cy="78" rx="1.6" ry="3.2" fill="#0a0a0a"/>
+            <ellipse cx="100" cy="78" rx="1.6" ry="3.2" fill="#0a0a0a"/>
+            <circle cx="58.5" cy="76.5" r="0.8" fill="#fff"/>
+            <circle cx="98.5" cy="76.5" r="0.8" fill="#fff"/>
+            <path d="M50 70 L70 73" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            <path d="M110 70 L90 73" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            <rect x="68" y="106" width="24" height="5" rx="2" fill="#3f3f46"/>
+            <ellipse cx="80" cy="98" rx="3.2" ry="2.2" fill="#27272a"/>
           </svg>
         </div>
       </div>
-      <p class="quote">"That assignment? Done. I'll take a victory nap."</p>
+      <p class="quote">"Calc homework? Witnessed. Eliminated. No survivors."</p>
       <div class="thumbs">
-        <div>
-          <svg viewBox="0 0 120 120" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 60 Q22 30 60 28 Q98 30 98 60 L98 100 Q98 108 90 108 L30 108 Q22 108 22 100 Z" fill="#7c3aed"/>
-            <ellipse cx="60" cy="70" rx="26" ry="24" fill="#d4a373"/>
-            <ellipse cx="48" cy="64" rx="9" ry="7" fill="#5e3a1a"/>
-            <ellipse cx="72" cy="64" rx="9" ry="7" fill="#5e3a1a"/>
-            <ellipse cx="60" cy="76" rx="3" ry="2" fill="#0f172a"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="#d4d4d8"/>
+            <ellipse cx="38" cy="32" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="122" cy="32" rx="14" ry="13" fill="#000"/>
+            <path d="M80 30 C 50 30, 28 52, 28 86 C 28 110, 42 124, 60 128 L 100 128 C 118 124, 132 110, 132 86 C 132 52, 110 30, 80 30 Z" fill="#0a0a0a"/>
+            <ellipse cx="60" cy="78" rx="6" ry="4" fill="#facc15"/>
+            <ellipse cx="100" cy="78" rx="6" ry="4" fill="#facc15"/>
           </svg>
-          <div class="thumb-label">32px</div>
+          <span class="thumb-label">32</span>
         </div>
-        <div>
-          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 60 Q22 30 60 28 Q98 30 98 60 L98 100 Q98 108 90 108 L30 108 Q22 108 22 100 Z" fill="#7c3aed"/>
-            <ellipse cx="60" cy="70" rx="26" ry="24" fill="#d4a373"/>
-            <ellipse cx="48" cy="64" rx="9" ry="7" fill="#5e3a1a"/>
-            <ellipse cx="72" cy="64" rx="9" ry="7" fill="#5e3a1a"/>
-            <circle cx="48" cy="65" r="1.4" fill="#0f172a"/>
-            <circle cx="72" cy="65" r="1.4" fill="#0f172a"/>
-            <ellipse cx="60" cy="76" rx="3" ry="2" fill="#0f172a"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="#d4d4d8"/>
+            <ellipse cx="38" cy="32" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="122" cy="32" rx="14" ry="13" fill="#000"/>
+            <path d="M80 30 C 50 30, 28 52, 28 86 C 28 110, 42 124, 60 128 L 100 128 C 118 124, 132 110, 132 86 C 132 52, 110 30, 80 30 Z" fill="#0a0a0a"/>
+            <ellipse cx="60" cy="78" rx="6" ry="4" fill="#facc15"/>
+            <ellipse cx="100" cy="78" rx="6" ry="4" fill="#facc15"/>
+            <ellipse cx="60" cy="78" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <ellipse cx="100" cy="78" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <rect x="68" y="106" width="24" height="5" rx="2" fill="#3f3f46"/>
           </svg>
-          <div class="thumb-label">48px</div>
+          <span class="thumb-label">48</span>
+        </div>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="62" ry="58" fill="#d4d4d8"/>
+            <ellipse cx="38" cy="32" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="122" cy="32" rx="14" ry="13" fill="#000"/>
+            <path d="M80 30 C 50 30, 28 52, 28 86 C 28 110, 42 124, 60 128 L 100 128 C 118 124, 132 110, 132 86 C 132 52, 110 30, 80 30 Z" fill="#0a0a0a"/>
+            <ellipse cx="60" cy="78" rx="6" ry="4" fill="#facc15"/>
+            <ellipse cx="100" cy="78" rx="6" ry="4" fill="#facc15"/>
+            <ellipse cx="60" cy="78" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <ellipse cx="100" cy="78" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <path d="M50 70 L70 73" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M110 70 L90 73" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+            <rect x="68" y="106" width="24" height="5" rx="2" fill="#3f3f46"/>
+          </svg>
+          <span class="thumb-label">64</span>
         </div>
       </div>
     </div>
 
-    <!-- ============ 2. CROW ============ -->
+    <!-- ============ B. STITCHED ROBBER MASK ============ -->
     <div class="card">
       <div>
-        <div class="codename">Option 2 · Heist</div>
-        <h2 class="name">Crow with sunglasses</h2>
+        <div class="codename">Variant B</div>
+        <h2 class="name">Stitched ski mask</h2>
       </div>
-      <p class="desc">A clever crow in tiny shades, holding a stolen pencil. "We're not studying. We're <em>planning</em>." Distinctive silhouette, looks great in dark mode.</p>
+      <p class="desc">Mask covers the upper face only — eyes and forehead — with visible stitch seam across the brow. Lower face stays panda fur. Reads as edgy without going full balaclava.</p>
       <div class="row">
         <div class="stage">
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <!-- shadow -->
-            <ellipse cx="60" cy="108" rx="30" ry="4" fill="rgba(0,0,0,0.2)"/>
-            <!-- body -->
-            <ellipse cx="60" cy="80" rx="28" ry="24" fill="#1e293b"/>
-            <!-- belly highlight -->
-            <ellipse cx="60" cy="86" rx="14" ry="12" fill="#334155"/>
-            <!-- head -->
-            <circle cx="60" cy="48" r="22" fill="#0f172a"/>
-            <!-- head highlight -->
-            <ellipse cx="55" cy="40" rx="9" ry="6" fill="#1e293b"/>
-            <!-- beak -->
-            <path d="M40 50 L24 54 L40 58 Z" fill="#fbbf24"/>
-            <path d="M40 50 L26 53 L40 56 Z" fill="#f59e0b"/>
-            <!-- sunglasses bridge + lenses -->
-            <rect x="48" y="38" width="34" height="10" rx="3" fill="#0f172a" stroke="#334155" stroke-width="0.5"/>
-            <ellipse cx="56" cy="43" rx="7" ry="5" fill="#020617"/>
-            <ellipse cx="74" cy="43" rx="7" ry="5" fill="#020617"/>
-            <!-- lens shine -->
-            <ellipse cx="53" cy="40" rx="2" ry="1.2" fill="#a78bfa" opacity="0.8"/>
-            <ellipse cx="71" cy="40" rx="2" ry="1.2" fill="#a78bfa" opacity="0.8"/>
-            <!-- wing -->
-            <path d="M82 70 Q98 78 88 96 Q78 92 78 80 Z" fill="#020617"/>
-            <!-- wing feather lines -->
-            <path d="M82 76 L92 84" stroke="#334155" stroke-width="0.8"/>
-            <path d="M81 82 L90 90" stroke="#334155" stroke-width="0.8"/>
-            <!-- pencil being held -->
-            <g transform="rotate(20 80 92)">
-              <rect x="68" y="92" width="22" height="3.5" fill="#fbbf24"/>
-              <rect x="68" y="92" width="3" height="3.5" fill="#ec4899"/>
-              <polygon points="90,92 96,93.75 90,95.5" fill="#fde68a"/>
-              <polygon points="93,93 96,93.75 93,94.5" fill="#0f172a"/>
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="bFur" cx="50%" cy="55%" r="60%">
+                <stop offset="0%" stop-color="#fafafa"/>
+                <stop offset="75%" stop-color="#d4d4d8"/>
+                <stop offset="100%" stop-color="#71717a"/>
+              </radialGradient>
+              <pattern id="bFurStrokes" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                <path d="M1 1 L3 -1 M5 3 L8 0 M9 7 L12 4 M2 8 L5 6 M7 11 L10 9" stroke="#a1a1aa" stroke-width="0.55" stroke-linecap="round" opacity="0.6"/>
+              </pattern>
+              <linearGradient id="bMask" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#27272a"/>
+                <stop offset="100%" stop-color="#0a0a0a"/>
+              </linearGradient>
+            </defs>
+
+            <!-- head fur -->
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="url(#bFur)"/>
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="url(#bFurStrokes)"/>
+            <!-- fur tufts -->
+            <g stroke="#a1a1aa" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7">
+              <path d="M20 70 L14 66 M18 90 L12 90 M20 110 L14 116 M28 134 L24 142 M50 148 L48 156 M80 150 L80 158 M110 148 L112 156 M132 134 L136 142 M140 110 L146 116 M142 90 L148 90 M140 70 L146 66"/>
+              <path d="M30 50 L26 43 M48 38 L46 30 M80 34 L80 26 M112 38 L114 30 M130 50 L134 43"/>
             </g>
-            <!-- feet -->
-            <path d="M50 102 L48 110 M50 102 L52 110 M50 102 L46 108" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M68 102 L66 110 M68 102 L70 110 M68 102 L72 108" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- side eye / smirk dot -->
-            <circle cx="44" cy="56" r="1" fill="#a78bfa"/>
+            <!-- panda ears -->
+            <ellipse cx="36" cy="34" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="124" cy="34" rx="14" ry="13" fill="#000"/>
+            <g stroke="#3f3f46" stroke-width="0.7" stroke-linecap="round" opacity="0.85">
+              <path d="M26 30 L23 27 M28 38 L24 40 M42 28 L44 24 M46 38 L50 38"/>
+              <path d="M114 30 L117 27 M116 38 L120 40 M130 28 L132 24 M134 38 L138 38"/>
+            </g>
+
+            <!-- SKI MASK: top half of face only, with stitched seam -->
+            <path d="M14 60
+                     Q 14 38, 50 32
+                     Q 80 28, 110 32
+                     Q 146 38, 146 60
+                     L 146 96
+                     Q 130 102, 110 100
+                     Q 80 96, 50 100
+                     Q 30 102, 14 96 Z"
+                  fill="url(#bMask)"/>
+            <!-- mask top edge highlight -->
+            <path d="M22 56 Q 80 38, 138 56" stroke="#3f3f46" stroke-width="1.2" fill="none" opacity="0.9"/>
+            <!-- stitch seam across the bottom of the mask -->
+            <path d="M16 95 Q 80 102, 144 95" stroke="#52525b" stroke-width="1.2" stroke-dasharray="3 3" fill="none"/>
+            <!-- vertical stitch down forehead -->
+            <path d="M80 32 L80 60" stroke="#3f3f46" stroke-width="0.8" stroke-dasharray="2 2"/>
+
+            <!-- eyes (cutouts) -->
+            <ellipse cx="58" cy="76" rx="11" ry="7" fill="#e4e4e7"/>
+            <ellipse cx="102" cy="76" rx="11" ry="7" fill="#e4e4e7"/>
+            <ellipse cx="58" cy="76" rx="6" ry="4.6" fill="#facc15"/>
+            <ellipse cx="102" cy="76" rx="6" ry="4.6" fill="#facc15"/>
+            <ellipse cx="58" cy="76" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="76" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <circle cx="56.4" cy="74.4" r="0.9" fill="#fff"/>
+            <circle cx="100.4" cy="74.4" r="0.9" fill="#fff"/>
+            <!-- angled brows for a glare -->
+            <path d="M48 64 L70 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M112 64 L90 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- nose visible below mask -->
+            <ellipse cx="80" cy="112" rx="3.6" ry="2.6" fill="#0a0a0a"/>
+            <!-- flat unimpressed mouth -->
+            <path d="M68 124 L92 124" stroke="#0a0a0a" stroke-width="2.4" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="stage dark">
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="60" cy="108" rx="30" ry="4" fill="rgba(0,0,0,0.5)"/>
-            <ellipse cx="60" cy="80" rx="28" ry="24" fill="#475569"/>
-            <ellipse cx="60" cy="86" rx="14" ry="12" fill="#64748b"/>
-            <circle cx="60" cy="48" r="22" fill="#334155"/>
-            <ellipse cx="55" cy="40" rx="9" ry="6" fill="#475569"/>
-            <path d="M40 50 L24 54 L40 58 Z" fill="#fbbf24"/>
-            <path d="M40 50 L26 53 L40 56 Z" fill="#f59e0b"/>
-            <rect x="48" y="38" width="34" height="10" rx="3" fill="#0f172a"/>
-            <ellipse cx="56" cy="43" rx="7" ry="5" fill="#020617"/>
-            <ellipse cx="74" cy="43" rx="7" ry="5" fill="#020617"/>
-            <ellipse cx="53" cy="40" rx="2" ry="1.2" fill="#a78bfa" opacity="0.9"/>
-            <ellipse cx="71" cy="40" rx="2" ry="1.2" fill="#a78bfa" opacity="0.9"/>
-            <path d="M82 70 Q98 78 88 96 Q78 92 78 80 Z" fill="#0f172a"/>
-            <path d="M82 76 L92 84" stroke="#475569" stroke-width="0.8"/>
-            <path d="M81 82 L90 90" stroke="#475569" stroke-width="0.8"/>
-            <g transform="rotate(20 80 92)">
-              <rect x="68" y="92" width="22" height="3.5" fill="#fbbf24"/>
-              <rect x="68" y="92" width="3" height="3.5" fill="#ec4899"/>
-              <polygon points="90,92 96,93.75 90,95.5" fill="#fde68a"/>
-              <polygon points="93,93 96,93.75 93,94.5" fill="#0f172a"/>
+        <div class="stage light">
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="url(#bFur)"/>
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="url(#bFurStrokes)"/>
+            <g stroke="#a1a1aa" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7">
+              <path d="M20 70 L14 66 M18 90 L12 90 M20 110 L14 116 M28 134 L24 142 M50 148 L48 156 M80 150 L80 158 M110 148 L112 156 M132 134 L136 142 M140 110 L146 116 M142 90 L148 90 M140 70 L146 66"/>
+              <path d="M30 50 L26 43 M48 38 L46 30 M80 34 L80 26 M112 38 L114 30 M130 50 L134 43"/>
             </g>
-            <path d="M50 102 L48 110 M50 102 L52 110 M50 102 L46 108" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M68 102 L66 110 M68 102 L70 110 M68 102 L72 108" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <circle cx="44" cy="56" r="1" fill="#a78bfa"/>
+            <ellipse cx="36" cy="34" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="124" cy="34" rx="14" ry="13" fill="#000"/>
+            <path d="M14 60 Q 14 38, 50 32 Q 80 28, 110 32 Q 146 38, 146 60 L 146 96 Q 130 102, 110 100 Q 80 96, 50 100 Q 30 102, 14 96 Z" fill="url(#bMask)"/>
+            <path d="M22 56 Q 80 38, 138 56" stroke="#3f3f46" stroke-width="1.2" fill="none" opacity="0.9"/>
+            <path d="M16 95 Q 80 102, 144 95" stroke="#52525b" stroke-width="1.2" stroke-dasharray="3 3" fill="none"/>
+            <path d="M80 32 L80 60" stroke="#3f3f46" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <ellipse cx="58" cy="76" rx="11" ry="7" fill="#e4e4e7"/>
+            <ellipse cx="102" cy="76" rx="11" ry="7" fill="#e4e4e7"/>
+            <ellipse cx="58" cy="76" rx="6" ry="4.6" fill="#facc15"/>
+            <ellipse cx="102" cy="76" rx="6" ry="4.6" fill="#facc15"/>
+            <ellipse cx="58" cy="76" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="76" rx="1.8" ry="3.4" fill="#0a0a0a"/>
+            <circle cx="56.4" cy="74.4" r="0.9" fill="#fff"/>
+            <circle cx="100.4" cy="74.4" r="0.9" fill="#fff"/>
+            <path d="M48 64 L70 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M112 64 L90 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="80" cy="112" rx="3.6" ry="2.6" fill="#0a0a0a"/>
+            <path d="M68 124 L92 124" stroke="#0a0a0a" stroke-width="2.4" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
-      <p class="quote">"Stole that grade. Flew off. Won't be questioned."</p>
+      <p class="quote">"Quiet hours. We work. Deadlines die."</p>
       <div class="thumbs">
-        <div>
-          <svg viewBox="0 0 120 120" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="60" cy="80" rx="28" ry="24" fill="#1e293b"/>
-            <circle cx="60" cy="48" r="22" fill="#0f172a"/>
-            <path d="M40 50 L24 54 L40 58 Z" fill="#fbbf24"/>
-            <rect x="48" y="38" width="34" height="10" rx="3" fill="#020617"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="#d4d4d8"/>
+            <ellipse cx="36" cy="34" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="124" cy="34" rx="14" ry="13" fill="#000"/>
+            <path d="M14 60 Q 14 38, 50 32 Q 80 28, 110 32 Q 146 38, 146 60 L 146 96 Q 130 102, 110 100 Q 80 96, 50 100 Q 30 102, 14 96 Z" fill="#0a0a0a"/>
+            <ellipse cx="58" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
+            <ellipse cx="102" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
           </svg>
-          <div class="thumb-label">32px</div>
+          <span class="thumb-label">32</span>
         </div>
-        <div>
-          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="60" cy="80" rx="28" ry="24" fill="#1e293b"/>
-            <circle cx="60" cy="48" r="22" fill="#0f172a"/>
-            <path d="M40 50 L24 54 L40 58 Z" fill="#fbbf24"/>
-            <rect x="48" y="38" width="34" height="10" rx="3" fill="#020617"/>
-            <ellipse cx="56" cy="43" rx="7" ry="5" fill="#020617"/>
-            <ellipse cx="74" cy="43" rx="7" ry="5" fill="#020617"/>
-            <ellipse cx="53" cy="40" rx="2" ry="1.2" fill="#a78bfa"/>
-            <ellipse cx="71" cy="40" rx="2" ry="1.2" fill="#a78bfa"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="#d4d4d8"/>
+            <ellipse cx="36" cy="34" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="124" cy="34" rx="14" ry="13" fill="#000"/>
+            <path d="M14 60 Q 14 38, 50 32 Q 80 28, 110 32 Q 146 38, 146 60 L 146 96 Q 130 102, 110 100 Q 80 96, 50 100 Q 30 102, 14 96 Z" fill="#0a0a0a"/>
+            <ellipse cx="58" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
+            <ellipse cx="102" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
+            <ellipse cx="58" cy="76" rx="2" ry="3.6" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="76" rx="2" ry="3.6" fill="#0a0a0a"/>
+            <ellipse cx="80" cy="112" rx="3.6" ry="2.6" fill="#0a0a0a"/>
+            <path d="M68 124 L92 124" stroke="#0a0a0a" stroke-width="2.6" stroke-linecap="round"/>
           </svg>
-          <div class="thumb-label">48px</div>
+          <span class="thumb-label">48</span>
+        </div>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="88" rx="64" ry="60" fill="#d4d4d8"/>
+            <ellipse cx="36" cy="34" rx="14" ry="13" fill="#000"/>
+            <ellipse cx="124" cy="34" rx="14" ry="13" fill="#000"/>
+            <path d="M14 60 Q 14 38, 50 32 Q 80 28, 110 32 Q 146 38, 146 60 L 146 96 Q 130 102, 110 100 Q 80 96, 50 100 Q 30 102, 14 96 Z" fill="#0a0a0a"/>
+            <path d="M16 95 Q 80 102, 144 95" stroke="#52525b" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
+            <ellipse cx="58" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
+            <ellipse cx="102" cy="76" rx="6.5" ry="4.5" fill="#facc15"/>
+            <ellipse cx="58" cy="76" rx="2" ry="3.6" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="76" rx="2" ry="3.6" fill="#0a0a0a"/>
+            <path d="M48 64 L70 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M112 64 L90 68" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="80" cy="112" rx="3.6" ry="2.6" fill="#0a0a0a"/>
+            <path d="M68 124 L92 124" stroke="#0a0a0a" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+          <span class="thumb-label">64</span>
         </div>
       </div>
-      <div><span class="pick">Claude's pick</span></div>
     </div>
 
-    <!-- ============ 3. PANDA BANDIT ============ -->
+    <!-- ============ C. EYE-SLITS ONLY ============ -->
     <div class="card">
       <div>
-        <div class="codename">Option 3 · Bandit</div>
-        <h2 class="name">Cat-burglar panda</h2>
+        <div class="codename">Variant C</div>
+        <h2 class="name">Slits only</h2>
       </div>
-      <p class="desc">Built-in mask, holding a flashlight, planning a homework heist. "We're stealing back your weekend." Owns your tester's idea but turns up the snark.</p>
+      <p class="desc">Tight balaclava — only two thin angled slits visible, glowing from inside. No mouth opening, no nose. Most anonymous. Most menacing.</p>
       <div class="row">
         <div class="stage">
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <!-- shadow -->
-            <ellipse cx="60" cy="108" rx="32" ry="4" fill="rgba(0,0,0,0.18)"/>
-            <!-- ears -->
-            <circle cx="32" cy="30" r="10" fill="#0f172a"/>
-            <circle cx="88" cy="30" r="10" fill="#0f172a"/>
-            <circle cx="32" cy="30" r="5" fill="#1e293b"/>
-            <circle cx="88" cy="30" r="5" fill="#1e293b"/>
-            <!-- head -->
-            <ellipse cx="60" cy="58" rx="34" ry="30" fill="#fafafa"/>
-            <!-- eye masks (built-in panda mask) -->
-            <ellipse cx="46" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(-15 46 56)"/>
-            <ellipse cx="74" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(15 74 56)"/>
-            <!-- eyes (yellow, sneaky) -->
-            <circle cx="48" cy="56" r="3" fill="#fde68a"/>
-            <circle cx="72" cy="56" r="3" fill="#fde68a"/>
-            <circle cx="48.5" cy="55.5" r="1.3" fill="#0f172a"/>
-            <circle cx="72.5" cy="55.5" r="1.3" fill="#0f172a"/>
-            <!-- nose -->
-            <ellipse cx="60" cy="68" rx="3" ry="2.2" fill="#0f172a"/>
-            <!-- mouth (smirk) -->
-            <path d="M55 76 Q60 79 66 75" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <!-- body -->
-            <ellipse cx="60" cy="98" rx="30" ry="14" fill="#0f172a"/>
-            <!-- arm holding flashlight -->
-            <ellipse cx="86" cy="86" rx="6" ry="9" fill="#0f172a" transform="rotate(35 86 86)"/>
-            <!-- flashlight body -->
-            <g transform="rotate(35 92 80)">
-              <rect x="86" y="76" width="14" height="6" rx="1.5" fill="#475569"/>
-              <rect x="100" y="74" width="6" height="10" rx="1" fill="#cbd5e1"/>
-              <!-- light beam -->
-              <polygon points="106,79 124,68 124,90" fill="#fde68a" opacity="0.55"/>
-              <polygon points="106,79 120,72 120,86" fill="#fef3c7" opacity="0.7"/>
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="cFur" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" stop-color="#f4f4f5"/>
+                <stop offset="80%" stop-color="#a1a1aa"/>
+                <stop offset="100%" stop-color="#52525b"/>
+              </radialGradient>
+              <pattern id="cFurStrokes" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M1 1 L3 -1 M5 4 L8 1 M2 7 L5 5 M7 9 L9 7" stroke="#71717a" stroke-width="0.5" stroke-linecap="round" opacity="0.7"/>
+              </pattern>
+            </defs>
+
+            <!-- big fur head -->
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="url(#cFur)"/>
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="url(#cFurStrokes)"/>
+
+            <!-- fur tufts all around for shaggy edge -->
+            <g stroke="#52525b" stroke-width="1.2" stroke-linecap="round" fill="none">
+              <path d="M16 60 L8 56 M14 78 L4 78 M14 96 L4 100 M22 118 L14 124 M40 138 L34 146 M62 148 L60 156 M80 150 L80 158 M98 148 L100 156 M120 138 L126 146 M138 118 L146 124 M146 96 L156 100 M146 78 L156 78 M144 60 L152 56"/>
+              <path d="M24 44 L18 38 M44 32 L40 24 M62 26 L60 18 M80 24 L80 14 M98 26 L100 18 M116 32 L120 24 M136 44 L142 38"/>
             </g>
-            <!-- arm holding "stolen" paper -->
-            <ellipse cx="34" cy="90" rx="6" ry="8" fill="#0f172a" transform="rotate(-25 34 90)"/>
-            <!-- paper with A+ -->
-            <g transform="rotate(-15 26 96)">
-              <rect x="18" y="86" width="16" height="20" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-              <text x="20" y="100" font-size="9" font-weight="700" fill="#22c55e" font-family="system-ui">A+</text>
+
+            <!-- panda ears -->
+            <ellipse cx="34" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <ellipse cx="126" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <g stroke="#3f3f46" stroke-width="0.7" stroke-linecap="round" opacity="0.85">
+              <path d="M24 26 L20 22 M26 36 L22 38 M40 24 L42 18 M46 36 L50 36"/>
+              <path d="M118 26 L122 22 M116 36 L120 38 M132 24 L130 18 M126 36 L122 36"/>
             </g>
-            <!-- belt strap detail -->
-            <rect x="42" y="100" width="36" height="3" fill="#7c3aed"/>
+
+            <!-- TIGHT BALACLAVA covering everything -->
+            <path d="M80 24
+                     C 44 24, 22 50, 22 86
+                     C 22 116, 38 132, 60 134
+                     L 100 134
+                     C 122 132, 138 116, 138 86
+                     C 138 50, 116 24, 80 24 Z"
+                  fill="#0a0a0a"/>
+            <!-- subtle highlight to give the mask shape -->
+            <path d="M50 38 Q 80 30, 110 38" stroke="#27272a" stroke-width="2" fill="none" opacity="0.9"/>
+            <path d="M30 80 Q 22 92, 30 110" stroke="#1c1c1e" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M130 80 Q 138 92, 130 110" stroke="#1c1c1e" stroke-width="2" fill="none" opacity="0.6"/>
+            <!-- center stitch -->
+            <path d="M80 26 L80 132" stroke="#1c1c1e" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.6"/>
+
+            <!-- ANGLED EYE SLITS, glowing -->
+            <g>
+              <!-- left slit -->
+              <path d="M44 78 L70 72 L72 80 L46 86 Z" fill="#facc15"/>
+              <!-- inner glow -->
+              <path d="M48 79 L68 74 L70 79 L50 84 Z" fill="#fde047"/>
+              <!-- pupil suggestion (a darker line in the slit) -->
+              <ellipse cx="58" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+              <!-- catchlight -->
+              <ellipse cx="62" cy="77" rx="1.4" ry="0.6" fill="#fffbe6"/>
+
+              <!-- right slit (mirrored) -->
+              <path d="M116 78 L90 72 L88 80 L114 86 Z" fill="#facc15"/>
+              <path d="M112 79 L92 74 L90 79 L110 84 Z" fill="#fde047"/>
+              <ellipse cx="102" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+              <ellipse cx="98" cy="77" rx="1.4" ry="0.6" fill="#fffbe6"/>
+            </g>
+
+            <!-- glow halo (very subtle) -->
+            <ellipse cx="58" cy="80" rx="14" ry="4" fill="#facc15" opacity="0.12"/>
+            <ellipse cx="102" cy="80" rx="14" ry="4" fill="#facc15" opacity="0.12"/>
           </svg>
         </div>
-        <div class="stage dark">
-          <svg viewBox="0 0 120 120" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="60" cy="108" rx="32" ry="4" fill="rgba(0,0,0,0.45)"/>
-            <circle cx="32" cy="30" r="10" fill="#020617"/>
-            <circle cx="88" cy="30" r="10" fill="#020617"/>
-            <circle cx="32" cy="30" r="5" fill="#1e293b"/>
-            <circle cx="88" cy="30" r="5" fill="#1e293b"/>
-            <ellipse cx="60" cy="58" rx="34" ry="30" fill="#e2e8f0"/>
-            <ellipse cx="46" cy="56" rx="11" ry="13" fill="#020617" transform="rotate(-15 46 56)"/>
-            <ellipse cx="74" cy="56" rx="11" ry="13" fill="#020617" transform="rotate(15 74 56)"/>
-            <circle cx="48" cy="56" r="3" fill="#fde68a"/>
-            <circle cx="72" cy="56" r="3" fill="#fde68a"/>
-            <circle cx="48.5" cy="55.5" r="1.3" fill="#0f172a"/>
-            <circle cx="72.5" cy="55.5" r="1.3" fill="#0f172a"/>
-            <ellipse cx="60" cy="68" rx="3" ry="2.2" fill="#0f172a"/>
-            <path d="M55 76 Q60 79 66 75" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <ellipse cx="60" cy="98" rx="30" ry="14" fill="#020617"/>
-            <ellipse cx="86" cy="86" rx="6" ry="9" fill="#020617" transform="rotate(35 86 86)"/>
-            <g transform="rotate(35 92 80)">
-              <rect x="86" y="76" width="14" height="6" rx="1.5" fill="#64748b"/>
-              <rect x="100" y="74" width="6" height="10" rx="1" fill="#e2e8f0"/>
-              <polygon points="106,79 124,68 124,90" fill="#fde68a" opacity="0.7"/>
-              <polygon points="106,79 120,72 120,86" fill="#fef3c7" opacity="0.85"/>
+        <div class="stage light">
+          <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="url(#cFur)"/>
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="url(#cFurStrokes)"/>
+            <g stroke="#52525b" stroke-width="1.2" stroke-linecap="round" fill="none">
+              <path d="M16 60 L8 56 M14 78 L4 78 M14 96 L4 100 M22 118 L14 124 M40 138 L34 146 M62 148 L60 156 M80 150 L80 158 M98 148 L100 156 M120 138 L126 146 M138 118 L146 124 M146 96 L156 100 M146 78 L156 78 M144 60 L152 56"/>
+              <path d="M24 44 L18 38 M44 32 L40 24 M62 26 L60 18 M80 24 L80 14 M98 26 L100 18 M116 32 L120 24 M136 44 L142 38"/>
             </g>
-            <ellipse cx="34" cy="90" rx="6" ry="8" fill="#020617" transform="rotate(-25 34 90)"/>
-            <g transform="rotate(-15 26 96)">
-              <rect x="18" y="86" width="16" height="20" rx="1.5" fill="#fafafa" stroke="#0f172a" stroke-width="0.6"/>
-              <text x="20" y="100" font-size="9" font-weight="700" fill="#22c55e" font-family="system-ui">A+</text>
-            </g>
-            <rect x="42" y="100" width="36" height="3" fill="#a78bfa"/>
+            <ellipse cx="34" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <ellipse cx="126" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <path d="M80 24 C 44 24, 22 50, 22 86 C 22 116, 38 132, 60 134 L 100 134 C 122 132, 138 116, 138 86 C 138 50, 116 24, 80 24 Z" fill="#0a0a0a"/>
+            <path d="M50 38 Q 80 30, 110 38" stroke="#27272a" stroke-width="2" fill="none" opacity="0.9"/>
+            <path d="M80 26 L80 132" stroke="#1c1c1e" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.6"/>
+            <path d="M44 78 L70 72 L72 80 L46 86 Z" fill="#facc15"/>
+            <path d="M48 79 L68 74 L70 79 L50 84 Z" fill="#fde047"/>
+            <ellipse cx="58" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+            <ellipse cx="62" cy="77" rx="1.4" ry="0.6" fill="#fffbe6"/>
+            <path d="M116 78 L90 72 L88 80 L114 86 Z" fill="#facc15"/>
+            <path d="M112 79 L92 74 L90 79 L110 84 Z" fill="#fde047"/>
+            <ellipse cx="102" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+            <ellipse cx="98" cy="77" rx="1.4" ry="0.6" fill="#fffbe6"/>
           </svg>
         </div>
       </div>
-      <p class="quote">"Snatched the A+. Returned the weekend. Vanished into the night."</p>
+      <p class="quote">"Lights off. Heads down. Homework's not making it out alive."</p>
       <div class="thumbs">
-        <div>
-          <svg viewBox="0 0 120 120" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="30" r="10" fill="#0f172a"/>
-            <circle cx="88" cy="30" r="10" fill="#0f172a"/>
-            <ellipse cx="60" cy="58" rx="34" ry="30" fill="#fafafa"/>
-            <ellipse cx="46" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(-15 46 56)"/>
-            <ellipse cx="74" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(15 74 56)"/>
-            <ellipse cx="60" cy="68" rx="3" ry="2.2" fill="#0f172a"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="#a1a1aa"/>
+            <ellipse cx="34" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <ellipse cx="126" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <path d="M80 24 C 44 24, 22 50, 22 86 C 22 116, 38 132, 60 134 L 100 134 C 122 132, 138 116, 138 86 C 138 50, 116 24, 80 24 Z" fill="#0a0a0a"/>
+            <path d="M44 78 L72 72 L72 82 L44 88 Z" fill="#facc15"/>
+            <path d="M116 78 L88 72 L88 82 L116 88 Z" fill="#facc15"/>
           </svg>
-          <div class="thumb-label">32px</div>
+          <span class="thumb-label">32</span>
         </div>
-        <div>
-          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="30" r="10" fill="#0f172a"/>
-            <circle cx="88" cy="30" r="10" fill="#0f172a"/>
-            <ellipse cx="60" cy="58" rx="34" ry="30" fill="#fafafa"/>
-            <ellipse cx="46" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(-15 46 56)"/>
-            <ellipse cx="74" cy="56" rx="11" ry="13" fill="#0f172a" transform="rotate(15 74 56)"/>
-            <circle cx="48" cy="56" r="3" fill="#fde68a"/>
-            <circle cx="72" cy="56" r="3" fill="#fde68a"/>
-            <ellipse cx="60" cy="68" rx="3" ry="2.2" fill="#0f172a"/>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="#a1a1aa"/>
+            <ellipse cx="34" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <ellipse cx="126" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <path d="M80 24 C 44 24, 22 50, 22 86 C 22 116, 38 132, 60 134 L 100 134 C 122 132, 138 116, 138 86 C 138 50, 116 24, 80 24 Z" fill="#0a0a0a"/>
+            <path d="M44 78 L72 72 L72 82 L44 88 Z" fill="#facc15"/>
+            <path d="M116 78 L88 72 L88 82 L116 88 Z" fill="#facc15"/>
+            <ellipse cx="58" cy="80" rx="3" ry="1.5" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="80" rx="3" ry="1.5" fill="#0a0a0a"/>
           </svg>
-          <div class="thumb-label">48px</div>
+          <span class="thumb-label">48</span>
+        </div>
+        <div class="thumb">
+          <svg viewBox="0 0 160 160" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="86" rx="66" ry="62" fill="#a1a1aa"/>
+            <ellipse cx="34" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <ellipse cx="126" cy="30" rx="15" ry="14" fill="#0a0a0a"/>
+            <path d="M80 24 C 44 24, 22 50, 22 86 C 22 116, 38 132, 60 134 L 100 134 C 122 132, 138 116, 138 86 C 138 50, 116 24, 80 24 Z" fill="#0a0a0a"/>
+            <path d="M44 78 L70 72 L72 80 L46 86 Z" fill="#facc15"/>
+            <path d="M116 78 L90 72 L88 80 L114 86 Z" fill="#facc15"/>
+            <ellipse cx="58" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+            <ellipse cx="102" cy="79" rx="3" ry="1.4" fill="#0a0a0a"/>
+          </svg>
+          <span class="thumb-label">64</span>
         </div>
       </div>
     </div>
@@ -452,7 +569,7 @@
   </div>
 
   <p class="sub" style="margin-top:32px;">
-    Reply with the option number (or a mash-up) and I'll wire it into the app.
+    Tell me which variant (A / B / C) — or what to push further (more fur, smaller mask, no ears, different eye color) — and I'll wire it into the app.
   </p>
 </body>
 </html>
