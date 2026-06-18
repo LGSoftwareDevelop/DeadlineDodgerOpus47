@@ -1,0 +1,55 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deadlinedodgeropus47",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-05-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+
+  // Static assets (the built SPA) live in ./dist and are served by the
+  // worker's ASSETS binding. Unknown paths fall back to index.html so
+  // client-side routes work on refresh.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+
+  // ────────────────────────────────────────────────────────────────────
+  // CONFIGURABLE: change which OpenRouter model the parse endpoint uses.
+  // The default + fallbacks are all `:free` so there's no spend by
+  // default. Replace with paid model names (e.g. "openrouter/auto") if
+  // you want better accuracy.
+  //
+  // Edit these and re-deploy — no code changes needed.
+  // ────────────────────────────────────────────────────────────────────
+  "vars": {
+    "OPENROUTER_MODEL": "google/gemini-2.0-flash-exp:free",
+    "OPENROUTER_MODELS_FALLBACK": "meta-llama/llama-3.3-70b-instruct:free,mistralai/mistral-7b-instruct:free",
+    "PARSE_MAX_TOKENS": "800"
+  },
+
+  // ────────────────────────────────────────────────────────────────────
+  // CONFIGURABLE: per-IP rate limit for /api/parse-homework.
+  //
+  // Cloudflare's simple rate-limit binding accepts `period` of either
+  // 10 or 60 seconds. Tune `limit` to taste — 5/min per IP is enough
+  // to stop scripted abuse without bothering real students.
+  //
+  // For the OPENROUTER_API_KEY itself, set it as a SECRET (encrypted,
+  // never in this file):
+  //   • wrangler:    `npx wrangler secret put OPENROUTER_API_KEY`
+  //   • dashboard:   Workers → deadlinedodgeropus47 → Settings →
+  //                  Variables and Secrets → Add → Secret
+  // ────────────────────────────────────────────────────────────────────
+  "unsafe": {
+    "bindings": [
+      {
+        "name": "PARSE_RATE_LIMITER",
+        "type": "ratelimit",
+        "namespace_id": "5001",
+        "simple": { "limit": 5, "period": 60 }
+      }
+    ]
+  }
+}

@@ -61,6 +61,86 @@ npx wrangler pages deploy dist --project-name deadline-dodger
 
 (First time, Wrangler will prompt you to create the project.)
 
+## ✨ Natural-language quick add (optional, server-backed)
+
+Tap **"Paste it"** on the Today header or Assignments page, type something
+like:
+
+> chem reading ch 4 wed, math wks fri, history outline mon
+
+and it gets parsed into structured assignments, matched to your existing
+classes, and dropped into a review screen where you can edit each one
+before it's added. Parsing is done by a free OpenRouter model via a
+Cloudflare Worker — your API key stays on the server.
+
+### Configuring the AI parser
+
+All three knobs are env vars / Worker secrets — **no code changes needed
+to tune them.**
+
+#### 1. Set your OpenRouter API key (required to enable the feature)
+
+The key is a Worker **secret** — encrypted at rest, never in the repo.
+
+```bash
+npm run secret:set        # alias for: wrangler secret put OPENROUTER_API_KEY
+```
+
+Or in the Cloudflare dashboard: **Workers → deadlinedodgeropus47 →
+Settings → Variables and Secrets → Add → Secret**. Name it
+`OPENROUTER_API_KEY`.
+
+Without the key, the endpoint returns 503 and the modal shows
+"AI parsing isn't set up yet."
+
+#### 2. Change which model is used
+
+Edit `wrangler.jsonc` → `vars.OPENROUTER_MODEL` (primary) and
+`vars.OPENROUTER_MODELS_FALLBACK` (comma-separated list — OpenRouter
+falls through to these if the primary is unavailable).
+
+Defaults (all free):
+- Primary: `google/gemini-2.0-flash-exp:free`
+- Fallbacks: `meta-llama/llama-3.3-70b-instruct:free`, `mistralai/mistral-7b-instruct:free`
+
+To switch to a paid auto-router for better accuracy:
+```jsonc
+"vars": {
+  "OPENROUTER_MODEL": "openrouter/auto"
+}
+```
+
+#### 3. Change the rate limit
+
+Edit `wrangler.jsonc` → `unsafe.bindings[0].simple`:
+- `limit`: how many requests
+- `period`: time window in seconds (Cloudflare allows only **10** or **60**)
+
+Default: 5 requests per 60 seconds, per IP. Lower it to harden, raise it
+to loosen.
+
+#### 4. Other knobs
+
+- `PARSE_MAX_TOKENS` (default `800`): caps the model's response size and
+  worst-case cost. Lower it to be stingier, raise it if real assignments
+  get truncated.
+
+After editing `wrangler.jsonc`, redeploy: `npm run deploy`.
+
+### Local development of the AI endpoint
+
+The Vite dev server (`npm run dev`) doesn't run the Worker. To exercise
+the `/api/parse-homework` endpoint locally:
+
+```bash
+npx wrangler secret put OPENROUTER_API_KEY    # one-time, dev-only secret
+npm run dev:worker                            # runs `wrangler dev`
+```
+
+Then hit the worker URL directly (printed by wrangler) or proxy from
+Vite. The UI in `npm run dev` will show a friendly error until the
+worker is reachable.
+
 ## Data & privacy
 
 Everything is stored on-device:
@@ -70,6 +150,12 @@ Everything is stored on-device:
 - **No accounts. No servers. No tracking.**
 
 Use Settings → **Backup** to export a JSON snapshot you can stash in Google Drive / Notes / email. Attachments aren't included in JSON backups (binary blobs stay on the device).
+
+The only thing that ever leaves the device is what you type into the
+**Paste it** quick-add box (if you enabled it). That text + your class
+names + today's date are sent to the Worker, which forwards them to
+OpenRouter. Attachments, notes from other assignments, and any other
+state are never forwarded.
 
 ## Tech
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Plus, Flame, Calendar } from "lucide-react";
+import { Flame, Calendar, Sparkles } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import { useStore } from "../store/useStore";
 import { todayISO, prettyDate, isOverdue, daysUntil } from "../lib/date";
@@ -10,6 +10,7 @@ import { AssignmentForm } from "../components/AssignmentForm";
 import { CelebrationOverlay } from "../components/CelebrationOverlay";
 import { Mascot } from "../components/Mascot";
 import { EmptyState } from "../components/EmptyState";
+import { QuickAddModal } from "../components/QuickAddModal";
 import type { Class } from "../types";
 
 export function TodayPage() {
@@ -47,6 +48,7 @@ export function TodayPage() {
     open: false,
     quote: "",
   });
+  const [quickAddOpen, setQuickAddOpen] = useState(false);
 
   const quote = quoteOfTheDay(snarkLevel, today);
 
@@ -78,12 +80,22 @@ export function TodayPage() {
           </div>
           <Mascot size={88} mood={todayCount > 0 ? "happy" : "default"} />
         </div>
-        {todayCount > 0 && (
-          <div className="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur rounded-full px-3 py-1 text-sm">
-            <Flame size={16} className="text-amber-300" />
-            <span className="font-semibold">{todayCount}</span> done today
-          </div>
-        )}
+        <div className="mt-4 flex items-center gap-2 flex-wrap">
+          {todayCount > 0 && (
+            <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur rounded-full px-3 py-1 text-sm">
+              <Flame size={16} className="text-amber-300" />
+              <span className="font-semibold">{todayCount}</span> done today
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => setQuickAddOpen(true)}
+            className="inline-flex items-center gap-1.5 bg-white/20 hover:bg-white/30 backdrop-blur rounded-full px-3 py-1 text-sm transition"
+          >
+            <Sparkles size={16} />
+            Paste it
+          </button>
+        </div>
       </header>
 
       {/* Daily class prompts */}
@@ -224,6 +236,8 @@ export function TodayPage() {
         quote={celebrate.quote}
         onClose={() => setCelebrate({ open: false, quote: "" })}
       />
+
+      <QuickAddModal open={quickAddOpen} onClose={() => setQuickAddOpen(false)} />
     </div>
   );
 }

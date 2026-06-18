@@ -547,12 +547,25 @@ Important: the AI never directly mutates the store. The student always confirms.
 
 6. **Deploy:** `npm run build && wrangler deploy`. Cloudflare's auto-config already wires the Worker — we just need to give it a `main` entry.
 
-### 11.10 Decisions for you
+### 11.10 Decisions (locked in)
 
-Three quick choices before I build:
+| Question | Decision |
+|---|---|
+| Model | **Lock to `:free`.** Default `google/gemini-2.0-flash-exp:free` with `meta-llama/llama-3.3-70b-instruct:free` and `mistralai/mistral-7b-instruct:free` as fallbacks. Tunable via `OPENROUTER_MODEL` + `OPENROUTER_MODELS_FALLBACK` env vars. |
+| Rate limit | **5 requests per minute per IP.** Cloudflare's simple binding only allows 10s or 60s periods, so 5/min is the closest practical guard. Tunable in `wrangler.jsonc`. |
+| Quick-add button | **Today + Assignments only.** No floating action button. |
+| API key | **Worker secret** (`OPENROUTER_API_KEY`). Set via `npm run secret:set` or the Cloudflare dashboard. Never in code, never in vars. |
 
-1. **Model preference**: `openrouter/auto` (smartest, costs cents/parse) or **lock to `:free`** (zero cost, slightly dumber)?
-2. **Default rate limit**: per-IP. **20/hour, 100/day** sound right? Easy to tune.
-3. **Quick-add button placement**: just **Today + Assignments**, or also add a floating action button visible everywhere?
+### 11.11 What "configurable" means in practice
 
-Answer those and I'll build it phase-by-phase: Worker first (verify with `curl`), then the UI, then the review screen.
+Every knob is changeable without touching the codebase:
+
+| Knob | Where it lives | How to change |
+|---|---|---|
+| `OPENROUTER_API_KEY` | Worker secret (encrypted) | `npm run secret:set` (= `wrangler secret put OPENROUTER_API_KEY`) or Cloudflare dashboard → Workers → deadlinedodgeropus47 → Settings → Variables and Secrets |
+| `OPENROUTER_MODEL` | `wrangler.jsonc` → `vars.OPENROUTER_MODEL` | Edit + `npm run deploy` |
+| `OPENROUTER_MODELS_FALLBACK` | `wrangler.jsonc` → `vars.OPENROUTER_MODELS_FALLBACK` (comma-separated) | Edit + `npm run deploy` |
+| `PARSE_MAX_TOKENS` | `wrangler.jsonc` → `vars.PARSE_MAX_TOKENS` | Edit + `npm run deploy` |
+| Rate limit (limit + period) | `wrangler.jsonc` → `unsafe.bindings.simple.{limit, period}` | Edit + `npm run deploy` |
+
+Defaults ship in `wrangler.jsonc`. No source edits required.

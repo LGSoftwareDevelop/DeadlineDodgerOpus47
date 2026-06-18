@@ -1,11 +1,12 @@
 import { useMemo, useState } from "react";
-import { Plus } from "lucide-react";
+import { Plus, Sparkles } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import { useStore } from "../store/useStore";
 import { AssignmentCard } from "../components/AssignmentCard";
 import { AssignmentForm } from "../components/AssignmentForm";
 import { CelebrationOverlay } from "../components/CelebrationOverlay";
 import { EmptyState } from "../components/EmptyState";
+import { QuickAddModal } from "../components/QuickAddModal";
 import { isOverdue } from "../lib/date";
 import { completionQuote } from "../lib/quotes";
 import type { Assignment } from "../types";
@@ -26,6 +27,7 @@ export function AssignmentsPage() {
     open: false,
     quote: "",
   });
+  const [quickAddOpen, setQuickAddOpen] = useState(false);
 
   const filtered = useMemo(() => {
     let list = [...assignments];
@@ -54,13 +56,22 @@ export function AssignmentsPage() {
           </p>
         </div>
         {!isFormOpen && (
-          <button
-            type="button"
-            className="btn-primary"
-            onClick={() => setAdding(true)}
-          >
-            <Plus size={16} /> Add
-          </button>
+          <div className="flex gap-1.5">
+            <button
+              type="button"
+              className="btn-ghost"
+              onClick={() => setQuickAddOpen(true)}
+            >
+              <Sparkles size={16} /> Paste
+            </button>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={() => setAdding(true)}
+            >
+              <Plus size={16} /> Add
+            </button>
+          </div>
         )}
       </header>
 
@@ -152,6 +163,8 @@ export function AssignmentsPage() {
         quote={celebrate.quote}
         onClose={() => setCelebrate({ open: false, quote: "" })}
       />
+
+      <QuickAddModal open={quickAddOpen} onClose={() => setQuickAddOpen(false)} />
     </div>
   );
 }
