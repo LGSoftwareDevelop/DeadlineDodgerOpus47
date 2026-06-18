@@ -12,3 +12,7 @@ dist-ssr
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
